@@ -9,15 +9,24 @@ public class Menu {
         boolean continuar = true;
         Scanner sc = new Scanner(System.in);
         int n = 0;
-        System.out.println("Tamaño matriz");
+        System.out.print("Ingrese el tamaño de la matriz: ");
         n = sc.nextInt();
 
         int[][] ME = new int[n][n];
         ObjMatriz[][] MO = new ObjMatriz[n][n];
 
         while (continuar) {
-            System.out.println(
-                    "1. Llenar matriz enteros, 2. mostrar matriz enteros, 3. llenar matriz obj, 4. mostar matriz eobj, 5. Salir");
+
+            System.out.println("\n========== MENÚ ==========");
+            System.out.println("1. Llenar matriz entera");
+            System.out.println("2. Mostrar matriz entera");
+            System.out.println("3. Llenar matriz objetual");
+            System.out.println("4. Mostrar matriz objetual");
+            System.out.println("5. Mostrar diagonal principal de la matriz objetual");
+            System.out.println("6. Salir");
+            System.out.println("==========================");
+            System.out.print("Seleccione una opción: ");
+
             int opt = sc.nextInt();
 
             switch (opt) {
@@ -35,11 +44,20 @@ public class Menu {
                     m.MostrarMatrizObjetual(MO);
                     break;
                 case 5:
+                    m.MostrarDiagonalObjetual(MO);
+                    break;
+
+                case 6:
                     System.out.println("Hasta luego");
                     continuar = false;
                     break;
+
+                default:
+                    System.out.println("Ingrese una opción válida");
+                    break;
             }
         }
-    }
 
+        sc.close();
+    }
 }

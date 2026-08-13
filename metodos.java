@@ -11,7 +11,7 @@ public class metodos {
     public void MostrarMatrizEntera(int[][] m) {
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m.length; j++) {
-                System.out.print(m[i][j] + " ");
+                System.out.printf("%4d", m[i][j]);
             }
             System.out.println();
         }
@@ -34,10 +34,25 @@ public class metodos {
     public void MostrarMatrizObjetual(ObjMatriz[][] m) {
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m.length; j++) {
-                System.out.print(" - " + m[i][j].getDato());
+                System.out.printf("%4d", m[i][j].getDato());
             }
             System.out.println();
         }
 
     }
+
+    public void MostrarDiagonalObjetual(ObjMatriz[][] m) {
+
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m.length; j++) {
+                if (i == j) {
+                    System.out.printf("%4d", m[i][j].getDato());
+                } else {
+                    System.out.printf("%4d", 0);
+                }
+            }
+            System.out.println();
+        }
+    }
+
 }
